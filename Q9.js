@@ -1,30 +1,65 @@
-var a,b;
-[a,b]=[2,3]
-console.log(a,b);
-//here we are doing distructuring
+// spread operators
 
-var a=5;
-var b=6;
-[a,b] =[b,a]
-console.log(a);
-console.log(b);
-//here we did distruturing and printing element
+var allCars={...mynewCar,...myOldCar}
+console.log(allCars);
+// combining object
 
-var actor = {name: 'Krish',realName: 'Hrithik Roshan'};
-var name     = actor.name;
-var realName = actor.realName;
-console.log(name);     
-console.log(realName); 
-//her we did distuturing in object
+let arr = [1,2,3];
+let arr2 = [4,5];
+arr = [...arr,...arr2];
+console.log(arr);
+// concate array 
 
-var actor = {name: 'Krish',realName: 'Hrithik Roshan'};  
-({name,realName} = actor);
-console.log(name);     
-console.log(realName); 
-//here we use () because if we dont write () so it is see the curly braces so think it is a condition and gave us syntax error for remove this error we use ().
+let namesArray = ['kumar','shwetha','komal'];
+let arr2 = [...namesArray]; // using spread operator
+console.log(arr2); // [ 'kumar', 'shwetha', 'komal' ]
+arr2.push("Kunal"); // adding a new name
+console.log(arr2); //[ 'kumar', 'shwetha', 'komal', 'Kunal' ]
+console.log(namesArray);
+// copy
 
-var actor = {name: 'Krish',realName: 'Hrithik Roshan'};  
-const {name,realName} = actor;
-console.log(name);    
-console.log(realName); 
-//if we dont want to use () so do like this 
+var place={name:"paris",country:"France"};
+var duplicate ={...place};
+console.log(duplicate);
+// copy object
+
+let arr1 = ['x','y'];
+let arr2 = [...arr1,'c','d'];
+console.log(arr2); // [ 'x','y','c','d' ]
+// extend array
+
+let array1 =[1,2,3];
+let array2 =[4,5,6];
+let array3 =[7,8,9];
+array1 =[...array1,...array2,...array3];
+console.log(array1)
+// [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ],merge array
+
+let array1 = [1,2,3,4,4,4,4,2,3,3,4,6]
+let mySet = new Set(array1)
+myNewArray = [...mySet]
+console.log(myNewArray)
+//Cleaning up repeated elements from an array with a spread operator,remove 
+
+function add(a,b,...c){
+    console.log(a+b);
+    console.log(c);
+ } 
+ add(3,5,3,4)
+// rest spread operators
+
+function myFunction(v, w, x, y, z) { 
+    console.log(w)
+}
+let args = [0, 1];
+myFunction(-1, ...args, 2, ...[3]);
+// rest operators
+
+var myName="Muskan"
+var lettersOfMyName=[...myName]
+console.log(lettersOfMyName);
+// split
+
+var myName="kumar"
+console.log({...myName})
+// with a spread operator
